@@ -24,9 +24,9 @@ class Studentinfo{
 
 
 }
+let UniqueId = 100;
 let condition: boolean = true
 while(condition){
-let UniqueId = Math.floor(Math.random() * 9 + 1 ) ;
 let answer = await inquirer.prompt([
     {
         name:"nam",
@@ -64,8 +64,9 @@ let answer = await inquirer.prompt([
 
     }
 ]);
-
+UniqueId++;
 let studentData = new Studentinfo(answer.nam,answer.age,answer.fee,UniqueId,answer.sch,answer.course);
 console.log("\n",studentData);
 condition = answer.ask
+
 }
